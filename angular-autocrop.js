@@ -7,7 +7,7 @@
 \_______)|_||_| |_||_| \_) \___/ 
                                       
 
- * angular-autocrop v0.3.1
+ * angular-autocrop v0.3.2
  * Angular auto crop image 
  *
  * http://ddmweb.it/
@@ -22,7 +22,7 @@
   'use strict';
 
 
-	var autocrop = angular.module('autocrop', []).constant('MODULE_VERSION', '0.3.1');
+	var autocrop = angular.module('autocrop', []).constant('MODULE_VERSION', '0.3.2');
 
 	autocrop.factory('$autoCropImage', function() {
 		var original, cropped, widthImg = 0, heightImg = 0;
@@ -78,8 +78,12 @@
 		    if (offsetX > 1) offsetX = 1;
 		    if (offsetY > 1) offsetY = 1;
 
-		    var iw = img.width,
-		        ih = img.height,
+		    //get real size
+		    var newImg = new Image();
+		    newImg.src = img.src;
+
+		    var iw = newImg.width,
+		        ih = newImg.height,
 		        r = Math.min(w / iw, h / ih),
 		        nw = iw * r,   /// new prop. width
 		        nh = ih * r,   /// new prop. height
