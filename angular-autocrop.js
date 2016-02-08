@@ -7,7 +7,7 @@
 \_______)|_||_| |_||_| \_) \___/ 
                                       
 
- * angular-autocrop v0.1.1
+ * angular-autocrop v0.2.0
  * Angular auto crop image 
  *
  * http://ddmweb.it/
@@ -18,13 +18,13 @@
  
 */
 
-'use strict';
+(function () {
+  'use strict';
 
-(function(angular){
 
-	var autocrop = angular.module('autocrop', []);
+	var autocrop = angular.module('autocrop', []).constant('MODULE_VERSION', '0.2.0');
 
-	autocrop.controller('autoCropImage', [function() {
+	autocrop.factory('$autoCropImage', function() {
 		var original, cropped;
 		this.init = function(originalID, croppedID){
 			original = document.getElementById(originalID);
@@ -99,6 +99,6 @@
 		    var uri = canvas.toDataURL();
 		    cropped.src = uri;
 		}
-	}]);
+	});
 
-})(window.angular);
+}());
