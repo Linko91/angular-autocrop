@@ -7,7 +7,7 @@
 \_______)|_||_| |_||_| \_) \___/ 
                                       
 
- * angular-autocrop v0.1.0
+ * angular-autocrop v0.1.1
  * Angular auto crop image 
  *
  * http://ddmweb.it/
