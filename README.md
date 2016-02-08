@@ -27,6 +27,10 @@ Angular auto crop image
 <img id="original"/>
 ```
 
+```javascript
+$autoCropImage.init('original', 'cropped');
+```
+
 
 
 ## License
