@@ -1,18 +1,21 @@
 {
   "name": "angular-autocrop",
   "version": "0.1.0",
-  "main": [
-    "./angular-autocrop.js"
-  ],
+  "main": "angular-autocrop.js",
   "homepage": "https://github.com/Linko91/angular-autocrop",
   "authors": [
     "Davide Di Modica <webmaster.ddm@gmail.com>"
   ],
   "description": "Angular auto crop image",
   "ignore": [
-    "demo",
-    "LICENSE",
-    "README.md"
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "moduleType": [
+    "globals"
   ],
   "dependencies": {
     "angular": "~1.3.0"
