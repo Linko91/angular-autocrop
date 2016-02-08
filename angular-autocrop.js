@@ -7,7 +7,7 @@
 \_______)|_||_| |_||_| \_) \___/ 
                                       
 
- * angular-autocrop v0.3.0
+ * angular-autocrop v0.3.1
  * Angular auto crop image 
  *
  * http://ddmweb.it/
@@ -22,7 +22,7 @@
   'use strict';
 
 
-	var autocrop = angular.module('autocrop', []).constant('MODULE_VERSION', '0.3.0');
+	var autocrop = angular.module('autocrop', []).constant('MODULE_VERSION', '0.3.1');
 
 	autocrop.factory('$autoCropImage', function() {
 		var original, cropped, widthImg = 0, heightImg = 0;
@@ -106,8 +106,8 @@
 
 		    /// fill image in dest. rectangle
 		    var canvas = document.createElement("canvas");
-		    canvas.width = cropped.width;
-	        canvas.height = cropped.height;
+		    canvas.width = w;
+	        canvas.height = h;
 		    var ctx = canvas.getContext('2d');
 		    ctx.drawImage(img, cx, cy, cw, ch,  x, y, w, h);
 		    var uri = canvas.toDataURL();

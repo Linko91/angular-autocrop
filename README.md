@@ -1,6 +1,6 @@
 # angular-autocrop
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Bower version](https://img.shields.io/badge/bower-0.3.0-blue.svg)
+![Bower version](https://img.shields.io/badge/bower-0.3.1-blue.svg)
 
 
 Angular auto crop image
@@ -9,7 +9,7 @@ Angular auto crop image
 
 ### Several quick start options are available:
 
-* [Download the latest release](https://github.com/Linko91/angular-autocrop/archive/0.3.0.zip).
+* [Download the latest release](https://github.com/Linko91/angular-autocrop/archive/0.3.1.zip).
 * Clone the repo: `git clone https://github.com/Linko91/angular-autocrop.git`.
 * Install with [Bower](http://bower.io): `bower install angular-autocrop --save`.
 * Download [minified](https://raw.githubusercontent.com/Linko91/angular-autocrop/master/angular-autocrop.min.js).
