@@ -7,7 +7,7 @@
 \_______)|_||_| |_||_| \_) \___/ 
                                       
 
- * angular-autocrop v0.2.2
+ * angular-autocrop v0.3.0
  * Angular auto crop image 
  *
  * http://ddmweb.it/
@@ -22,25 +22,31 @@
   'use strict';
 
 
-	var autocrop = angular.module('autocrop', []).constant('MODULE_VERSION', '0.2.2');
+	var autocrop = angular.module('autocrop', []).constant('MODULE_VERSION', '0.3.0');
 
 	autocrop.factory('$autoCropImage', function() {
-		var original, cropped, scaleImg;
+		var original, cropped, widthImg = 0, heightImg = 0;
 		
-		function init(originalID, croppedID, scale){
+		function init(originalID, croppedID, width, height){
 			original = document.getElementById(originalID);
 			cropped = document.getElementById(croppedID);
-			if(!scale || !parseInt(scale) || isNaN(parseInt(scale)))
-				scale = 1
+			if(width && parseInt(width) && !isNaN(parseInt(width)))
+				widthImg = width;
 
-			scaleImg = scale;
+			if(height && parseInt(height) && !isNaN(parseInt(height)))
+				heightImg = height;
 
 			original.onload = draw;
 		}  
 
 		function draw() {
-			var w = cropped.width*scaleImg;
-			var h = cropped.height*scaleImg;
+			var w = cropped.width;
+			var h = cropped.height;
+
+			if(widthImg && heightImg){
+				w = widthImg;
+				h = heightImg;
+			}
 
 		    drawImageProp(cropped, this, 0, 0, w, h);
 		    //drawImageProp(ctx, this, 0, 0, canvas.width, canvas.height, 0.5, 0.5);
