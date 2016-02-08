@@ -7,7 +7,7 @@
 \_______)|_||_| |_||_| \_) \___/ 
                                       
 
- * angular-autocrop v0.2.1
+ * angular-autocrop v0.2.2
  * Angular auto crop image 
  *
  * http://ddmweb.it/
@@ -22,20 +22,27 @@
   'use strict';
 
 
-	var autocrop = angular.module('autocrop', []).constant('MODULE_VERSION', '0.2.1');
+	var autocrop = angular.module('autocrop', []).constant('MODULE_VERSION', '0.2.2');
 
 	autocrop.factory('$autoCropImage', function() {
-		var original, cropped;
+		var original, cropped, scaleImg;
 		
-		function init(originalID, croppedID){
+		function init(originalID, croppedID, scale){
 			original = document.getElementById(originalID);
 			cropped = document.getElementById(croppedID);
+			if(!scale || !parseInt(scale) || isNaN(parseInt(scale)))
+				scale = 1
+
+			scaleImg = scale;
 
 			original.onload = draw;
 		}  
 
 		function draw() {
-		    drawImageProp(cropped, this, 0, 0, cropped.width, cropped.height);
+			var w = cropped.width*scaleImg;
+			var h = cropped.height*scaleImg;
+
+		    drawImageProp(cropped, this, 0, 0, w, h);
 		    //drawImageProp(ctx, this, 0, 0, canvas.width, canvas.height, 0.5, 0.5);
 		}
 
